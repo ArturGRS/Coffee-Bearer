@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso - Cafeteira RFID</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 600px; margin-top: 50px;">
+        <div class="header">
+            <h1>Acesso ao Painel</h1>
+        </div>
+        <div class="main-content" style="padding: 30px;">
+            <div class="card">
+                <h2>Login do Administrador</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+                 <p id="login-error-message" style="color: red; text-align: center; margin-top: 15px;"></p>
+            </div>
+
+            <div class="card" style="margin-top: 30px;">
+                <h2>Consultar Créditos</h2>
+                 <form id="consulta-form">
+                    <div class="form-group">
+                        <label for="uid-consulta">UID da sua Tag RFID:</label>
+                        <input type="text" id="uid-consulta" name="uid-consulta" placeholder="Ex: A1 B2 C3 D4" required>
+                    </div>
+                    <button type="submit" class="btn">Consultar</button>
+                </form>
+            </div>
+            
+            <div class="card" id="resultado-consulta" style="display: none; margin-top: 30px;">
+                <h2>Seus Dados</h2>
+                <div class="stat-item">
+                    <span id="nome-consultado" class="stat-number" style="font-size: 1.8em;"></span>
+                    <span class="stat-label">Nome</span>
+                </div>
+                 <div class="stat-item" style="margin-top: 15px;">
+                    <span id="creditos-consultado" class="stat-number"></span>
+                    <span class="stat-label">Créditos Restantes</span>
+                </div>
+            </div>
+            <p id="consulta-error-message" style="color: red; text-align: center; margin-top: 15px;"></p>
+        </div>
+    </div>
+
+    <script src="/login-script.js"></script> 
+</body>
+</html> 

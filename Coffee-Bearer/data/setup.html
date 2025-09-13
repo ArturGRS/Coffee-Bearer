@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Wi-Fi da Cafeteira</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Configurar Wi-Fi da Cafeteira</h1>
+            <p>Conecte o dispositivo à sua rede local.</p>
+        </div>
+        <div class="main-content" style="grid-template-columns: 1fr;">
+            <div class="card">
+                <h2>Conectar à Rede Wi-Fi</h2>
+                <form action="/save_credentials" method="POST">
+                    <div class="form-group">
+                        <label for="ssid">Nome da Rede (SSID):</label>
+                        <input type="text" id="ssid" name="ssid" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Salvar e Reiniciar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
