@@ -68,33 +68,17 @@
                     <div style="text-align: center; color: #666; padding: 20px;">Carregando usuários...</div>
                 </div>
             </div>
+            
             <div class="card" style="grid-column: 1 / -1;">
-    <h2>Consulta de Usuário</h2>
-    <div class="form-group">
-        <label for="uid-consulta">Digite o UID para consultar:</label>
-        <input type="text" id="uid-consulta" placeholder="Ex: A1 B2 C3 D4">
-        <button class="btn" onclick="consultarUsuario()" style="margin-top: 10px;">Consultar</button>
-    </div>
-    
-    <div id="resultado-consulta" style="display: none; margin-top: 20px;">
-        <div class="usuario-consultado">
-            <h3 id="nome-consultado"></h3>
-            <p><strong>UID:</strong> <span id="uid-consultado"></span></p>
-            <p><strong>Créditos:</strong> <span id="creditos-consultado"></span></p>
-        </div>
-    </div>
-</div>
-
-    <div class="card" style="grid-column: 1 / -1;">
-        <h2>Log de Eventos do Sistema</h2>
-        <div style="margin-bottom: 15px;">
-            <button class="btn" onclick="carregarLogs()">Atualizar Logs</button>
-            <button class="btn" onclick="limparLogsVisualizacao()">Limpar Visualização</button>
-        </div>
-        <div id="logs-container" class="logs-container">
-        <div style="text-align: center; color: #666; padding: 20px;">Clique em "Atualizar Logs" para carregar</div>
-    </div>
-</div>
+                <h2>Log de Eventos do Sistema</h2>
+                <div style="margin-bottom: 15px;">
+                    <button class="btn" onclick="carregarLogs()">Atualizar Logs</button>
+                    <button class="btn" onclick="limparLogsVisualizacao()">Limpar Visualização</button>
+                </div>
+                <div id="logs-container" class="logs-container">
+                    <div style="text-align: center; color: #666; padding: 20px;">Clique em "Atualizar Logs" para carregar</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
