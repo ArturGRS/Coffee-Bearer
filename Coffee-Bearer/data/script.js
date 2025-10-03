@@ -224,69 +224,6 @@ async function fazerBackup() {
     }
 }
 
-/**
- * Consulta os dados de um usuário específico pelo UID.
- */
-async function consultarUsuario() {
-    const uid = document.getElementById('uid-consulta').value.trim().toUpperCase();
-    if (!uid) {
-        alert('Digite um UID para consultar.');
-        return;
-    }
-
-    const resultadoDiv = document.getElementById('resultado-consulta');
-    try {
-        const data = await fetchAPI(`/api/usuario?uid=${encodeURIComponent(uid)}`);
-        if (data.success) {
-            document.getElementById('nome-consultado').textContent = data.nome;
-            document.getElementById('uid-consultado').textContent = data.uid;
-            document.getElementById('creditos-consultado').textContent = data.creditos;
-            resultadoDiv.style.display = 'block';
-        } else {
-             resultadoDiv.style.display = 'none';
-        }
-    } catch (error) {
-        resultadoDiv.style.display = 'none';
-    }
-}
-
-/**
- * Carrega e exibe os logs do sistema.
- */
-async function carregarLogs() {
-    const logsContainer = document.getElementById('logs-container');
-    logsContainer.innerHTML = '<div style="text-align: center; color: #666;">Carregando logs...</div>';
-
-    try {
-        const data = await fetchAPI('/api/logs');
-        logsContainer.innerHTML = ''; // Limpa antes de adicionar
-
-        if (data.logs && data.logs.length > 0) {
-            data.logs.reverse().forEach(log => {
-                const logDiv = document.createElement('div');
-                logDiv.className = 'log-entry';
-                logDiv.textContent = log;
-                if (log.includes('Reset') || log.includes('inicializado') || log.includes('reabastecida')) {
-                    logDiv.classList.add('highlight');
-                }
-                logsContainer.appendChild(logDiv);
-            });
-        } else {
-            logsContainer.innerHTML = '<div style="text-align: center; color: #666;">Nenhum log encontrado.</div>';
-        }
-    } catch (error) {
-        logsContainer.innerHTML = '<div style="text-align: center; color: #f00;">Erro ao carregar logs.</div>';
-    }
-}
-
-/**
- * Limpa a visualização dos logs na tela.
- */
-function limparLogsVisualizacao() {
-    document.getElementById('logs-container').innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">Logs limpos da visualização. Clique em "Atualizar Logs" para recarregar.</div>';
-}
-
-
 // --- INICIALIZAÇÃO E EVENT LISTENERS ---
 
 // Garante que o DOM está carregado antes de executar o script

@@ -259,18 +259,6 @@ body {
     .main-content {
         padding: 20px;
     }
-
-    .usuario-consultado {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-    border-left: 4px solid #4a90e2;
-    }
-    
-    .usuario-consultado h3 {
-        color: #333;
-        margin-bottom: 10px;
-    }
     
     .logs-container {
         max-height: 400px;
